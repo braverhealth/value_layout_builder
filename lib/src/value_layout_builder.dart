@@ -21,7 +21,7 @@ class BoxValueConstraints<T> extends BoxConstraints {
   final T value;
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     assert(debugAssertIsValid());
     if (identical(this, other)) return true;
     if (other is! BoxValueConstraints<T>) return false;
@@ -37,7 +37,7 @@ class BoxValueConstraints<T> extends BoxConstraints {
   @override
   int get hashCode {
     assert(debugAssertIsValid());
-    return hashValues(minWidth, maxWidth, minHeight, maxHeight, value);
+    return Object.hash(minWidth, maxWidth, minHeight, maxHeight, value);
   }
 }
 
